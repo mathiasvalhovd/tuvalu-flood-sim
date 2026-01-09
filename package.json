@@ -1,0 +1,29 @@
+{
+  "name": "tuvalu-flood-sim",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An interactive web app exploring how sea level rise affects Tuvalu. Drag a slider to simulate rising waters and see which areas would flood based on elevation data.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasvalhovd/tuvalu-flood-sim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathiasvalhovd/tuvalu-flood-sim/issues"
+  },
+  "homepage": "https://github.com/mathiasvalhovd/tuvalu-flood-sim#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "mapbox-gl": "^3.17.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "vite": "^7.3.1"
+  }
+}
