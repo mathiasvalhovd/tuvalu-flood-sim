@@ -1,8 +1,34 @@
-export default function SeaLevelSlider() {
+import '../styles/slider.css'
+
+export default function SeaLevelSlider({ seaLevel, setSeaLevel }) {
+  const handleChange = (e) => {
+    setSeaLevel(parseFloat(e.target.value))
+  }
+
   return (
-    <div style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.9)' }}>
-      <h3>Sea Level Rise</h3>
-      <p>Slider placeholder - coming soon</p>
+    <div className="sea-level-slider">
+      <div className="slider-content">
+        <label htmlFor="sea-level" className="slider-label">
+          Sea Level Rise: <span className="slider-value">+{seaLevel.toFixed(1)}m</span>
+        </label>
+        <input
+          type="range"
+          id="sea-level"
+          min="0"
+          max="2"
+          step="0.1"
+          value={seaLevel}
+          onChange={handleChange}
+          className="slider-input"
+        />
+        <div className="slider-markers">
+          <span>0m</span>
+          <span>0.5m</span>
+          <span>1.0m</span>
+          <span>1.5m</span>
+          <span>2.0m</span>
+        </div>
+      </div>
     </div>
   )
 }
