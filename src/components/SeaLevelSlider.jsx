@@ -15,7 +15,7 @@ export default function SeaLevelSlider({ seaLevel, setSeaLevel }) {
           type="range"
           id="sea-level"
           min="0"
-          max="2"
+          max="5"
           step="0.1"
           value={seaLevel}
           onChange={handleChange}
@@ -23,10 +23,11 @@ export default function SeaLevelSlider({ seaLevel, setSeaLevel }) {
         />
         <div className="slider-markers">
           <span>0m</span>
-          <span>0.5m</span>
-          <span>1.0m</span>
-          <span>1.5m</span>
-          <span>2.0m</span>
+          <span>1m</span>
+          <span>2m</span>
+          <span>3m</span>
+          <span>4m</span>
+          <span>5m</span>
         </div>
       </div>
     </div>
