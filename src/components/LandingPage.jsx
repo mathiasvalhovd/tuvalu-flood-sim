@@ -75,7 +75,7 @@ export default function LandingPage({ onEnterStory }) {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
-          <p className="enter-story-hint">Follow the journey of a Tuvaluan family</p>
+          <p className="enter-story-hint">Follow the fictional journey of a Tuvaluan family</p>
         </div>
       </div>
     </div>

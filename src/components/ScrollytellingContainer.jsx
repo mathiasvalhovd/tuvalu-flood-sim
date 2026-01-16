@@ -41,12 +41,14 @@ export default function ScrollytellingContainer({ sections }) {
 
   return (
     <ScrollContext.Provider value={{ activeSection, setActiveSection }}>
-      <div className="scrollytelling-container">
-        <VisualPanel
-          visualSrc={currentVisual?.visualSrc}
-          visualAlt={currentVisual?.visualAlt}
-        />
-        <ContentPanel sections={sections} />
+      <div className="scrollytelling-wrapper">
+        <div className="scrollytelling-container">
+          <VisualPanel
+            visualSrc={currentVisual?.visualSrc}
+            visualAlt={currentVisual?.visualAlt}
+          />
+          <ContentPanel sections={sections} />
+        </div>
       </div>
     </ScrollContext.Provider>
   )

@@ -6,78 +6,27 @@ import './styles/main.css'
 const storySections = [
   {
     id: 'intro',
-    title: 'Life in Paradise',
+    title: 'Life before the rising sea',
     content: [
-      'The sun rises over the turquoise waters of Funafuti Atoll, painting the sky in shades of pink and gold.',
-      'For generations, families have called these low-lying islands home, living in harmony with the ocean that surrounds them.',
+      'Many years ago, Tavita and Mele Apinelu lived a peaceful life in Tuvalu. Their small home stood safely on the land, untouched by the sea. High tides came and went, but the water never reached their house.',
+      'Tavita fished close to shore and returned each day with full nets. Mele kept the home and shared evenings with him, listening to the ocean and talking about the future. Life felt stable, and the island felt permanent. At that time, they never imagined a day when the sea would threaten the place they called home.',
     ],
     visualSrc: '/images/story/P1.jpg',
     visualAlt: 'Sunrise over Tuvalu waters',
   },
   {
     id: 'family',
-    title: 'The Family',
+    title: 'A new opportunity - Falepili Union treaty',
     content: [
-      'Meet the Talia family - parents and their young daughter who have lived on this atoll for their entire lives.',
-      'Their home sits just meters above sea level, built in the traditional style with modern adaptations.',
+ 
+      'One afternoon, Mele overheard people talking in town about a new agreement with Australia. Curious and desperate for hope, she searched for more information. What she found made her heart race. Tuvalu and Australia had created a migration agreement that allowed Tuvaluans to apply for a special visa.',
+      'For the first time in months, Mele felt hope. She waited anxiously for Tavita to return home and told him everything as soon as he arrived. Tavita listened carefully, then nodded with determination. “We have to try,” he said. “For Litia.',
+      'As they read further, their excitement dimmed slightly. Only 280 people per year would be accepted. The chances were small. Even registering for the ballot required a 25 Australian Dollar fee, a significant amount for a family already struggling. Still, they knew they had no other option. With trembling hands and quiet prayers, they registered.'
+      ,
     ],
-    visualSrc: '/images/story/02-family.jpg',
+    visualSrc: '/images/story/P31.jpg',
     visualAlt: 'Traditional Tuvaluan family home',
-  },
-  {
-    id: 'rising-waters',
-    title: 'The Rising Tide',
-    content: [
-      'Over recent years, the family has noticed changes. High tides reach further inland than before.',
-      'Storm surges flood their garden more frequently. The water table rises, making fresh water scarce.',
-      'Climate change is no longer an abstract concept - it is their daily reality.',
-    ],
-    visualSrc: '/images/story/03-flooding.jpg',
-    visualAlt: 'Coastal flooding in Tuvalu',
-  },
-  {
-    id: 'impact',
-    title: 'A Changing Home',
-    content: [
-      'The saltwater intrusion damages crops. Fish migration patterns shift. Infrastructure crumbles under the constant assault of water.',
-      'Their daughter asks questions they struggle to answer: "Will our island disappear? Where will we go?"',
-    ],
-    visualSrc: '/images/story/04-impact.jpg',
-    visualAlt: 'Agricultural impact of sea level rise',
-  },
-  {
-    id: 'treaty',
-    title: 'A New Hope',
-    content: [
-      'News arrives of a groundbreaking treaty with Australia - the Australia-Tuvalu Falepili Union.',
-      'For the first time, there is a pathway. A chance for climate migrants to relocate with dignity and support.',
-      'The family faces an impossible choice: stay in their ancestral home or seek safety for their daughter\'s future.',
-    ],
-    visualSrc: '/images/story/05-treaty.jpg',
-    visualAlt: 'Community gathering to discuss the treaty',
-  },
-  {
-    id: 'decision',
-    title: 'The Ballot',
-    content: [
-      'After sleepless nights and tearful conversations, they decide to enter the ballot.',
-      'The announcement comes: they have been selected. A new chapter awaits in Australia.',
-      'They pack their belongings, carrying memories of an island that will always be home.',
-    ],
-    visualSrc: '/images/story/06-departure.jpg',
-    visualAlt: 'Family preparing for relocation',
-  },
-  {
-    id: 'future',
-    title: 'Looking Forward',
-    content: [
-      'The Talia family is now building a new life, carrying their culture and heritage with them.',
-      'Their story is one of thousands - a testament to resilience in the face of climate change.',
-      'Tuvalu may be small, but its people and their struggle represent one of the great challenges of our time.',
-    ],
-    visualSrc: '/images/story/07-hope.jpg',
-    visualAlt: 'New horizons',
-  },
+  }
 ]
 
 export default function App() {
