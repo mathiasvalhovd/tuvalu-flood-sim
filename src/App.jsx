@@ -26,6 +26,17 @@ const storySections = [
     ],
     visualSrc: '/images/story/P31.jpg',
     visualAlt: 'Traditional Tuvaluan family home',
+  },
+  {
+    id: 'The journey',
+    title: 'The journey',
+    content: [
+      'The day of departure came too quickly. The family packed only what they could carry, clothes, documents, and a few treasured items that held memories of home. Everything else had to be left behind.',
+      'They hugged their loved ones tightly, promising to remember and to stay connected, even across the ocean. Litia clutched her mother’s hand as they boarded the boat and later the plane, watching the island shrink beneath them. The journey was long and expensive, filled with fear and uncertainty. They were safe, but their hearts felt heavy.',
+      
+    ],
+    visualSrc: '/images/story/Map.png',
+    visualAlt: 'Traditional Tuvaluan family home',
   }
 ]
 
