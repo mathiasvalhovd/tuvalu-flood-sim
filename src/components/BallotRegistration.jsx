@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { supabase } from '../lib/supabase'
 
 const TUVALU_ISLANDS = [
   'Funafuti',
@@ -73,30 +74,36 @@ export default function BallotRegistration({ onBack, onComplete }) {
     return size
   }
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     setIsProcessing(true)
-    setTimeout(() => {
-      const refNum = generateReferenceNumber()
-      setReferenceNumber(refNum)
 
-      // Save to localStorage
-      const registrationData = {
-        id: refNum,
-        timestamp: new Date().toISOString(),
-        name: formData.fullName,
-        email: formData.email,
-        birthplace: formData.placeOfBirth,
-        familySize: calculateFamilySize()
-      }
+    // Simulate payment processing delay
+    await new Promise(resolve => setTimeout(resolve, 2500))
 
-      // Get existing registrations or create new array
-      const existing = JSON.parse(localStorage.getItem('ballotRegistrations') || '[]')
-      existing.push(registrationData)
-      localStorage.setItem('ballotRegistrations', JSON.stringify(existing))
+    const refNum = generateReferenceNumber()
+    setReferenceNumber(refNum)
 
-      setIsProcessing(false)
-      setStep(8)
-    }, 2500)
+    // Save to Supabase
+    const registrationData = {
+      reference_number: refNum,
+      name: formData.fullName,
+      email: formData.email,
+      birthplace: formData.placeOfBirth,
+      family_size: calculateFamilySize(),
+      gender: formData.gender,
+      include_spouse: formData.includeSpouse,
+      dependent_children: formData.dependentChildren
+    }
+
+    try {
+      await supabase.from('ballot_registrations').insert([registrationData])
+    } catch (error) {
+      console.error('Failed to save registration:', error)
+      // Continue anyway - don't block the user experience for a class demo
+    }
+
+    setIsProcessing(false)
+    setStep(8)
   }
 
   const canProceed = () => {
