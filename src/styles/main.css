@@ -373,6 +373,7 @@ body {
   flex-direction: column;
   text-align: center;
   color: white;
+  position: relative;
 }
 
 .landing-card-title h1 {
