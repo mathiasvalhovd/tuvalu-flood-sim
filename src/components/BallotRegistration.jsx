@@ -96,7 +96,9 @@ export default function BallotRegistration({ onBack, onComplete }) {
     }
 
     try {
-      await supabase.from('ballot_registrations').insert([registrationData])
+      if (supabase) {
+        await supabase.from('ballot_registrations').insert([registrationData])
+      }
     } catch (error) {
       console.error('Failed to save registration:', error)
       // Continue anyway - don't block the user experience for a class demo
