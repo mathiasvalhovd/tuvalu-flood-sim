@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import LandingPage from './components/LandingPage'
 import BallotRegistration from './components/BallotRegistration'
 import './styles/main.css'
@@ -46,6 +47,7 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
+      <Analytics />
       <div ref={landingRef} className={`page-transition ${getPageClass('landing')}`}>
         <LandingPage key={landingKey} onContinue={() => navigateTo('ballot')} />
       </div>

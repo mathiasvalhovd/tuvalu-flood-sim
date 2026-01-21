@@ -21,6 +21,7 @@
   "homepage": "https://github.com/mathiasvalhovd/tuvalu-flood-sim#readme",
   "dependencies": {
     "@supabase/supabase-js": "^2.91.0",
+    "@vercel/analytics": "^1.6.1",
     "@vitejs/plugin-react": "^5.1.2",
     "mapbox-gl": "^3.17.0",
     "react": "^19.2.3",
