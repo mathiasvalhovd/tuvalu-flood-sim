@@ -13,7 +13,7 @@ const TUVALU_ISLANDS = [
   'Niulakita'
 ]
 
-const TOTAL_STEPS = 9
+const TOTAL_STEPS = 10
 
 export default function BallotRegistration({ onBack, onComplete }) {
   const [step, setStep] = useState(0)
@@ -672,9 +672,152 @@ export default function BallotRegistration({ onBack, onComplete }) {
 
               <button
                 className="gov-button gov-button-primary"
+                onClick={() => setStep(9)}
+              >
+                What happens next?
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          )}
+
+          {/* Screen 9: What happens if selected */}
+          {step === 9 && (
+            <div className="gov-screen gov-next-steps">
+              <h2>What happens if you are selected?</h2>
+              <p className="gov-description">
+                If your registration is drawn in the ballot, here are the next steps you'll need to complete.
+              </p>
+
+              <div className="gov-timeline">
+                <div className="gov-timeline-item">
+                  <div className="gov-timeline-marker">1</div>
+                  <div className="gov-timeline-content">
+                    <h3>Receive notification</h3>
+                    <p>You'll be notified by email that you've been selected. This is your invitation to apply for the visa.</p>
+                    <div className="gov-timeline-detail">
+                      <span className="gov-timeline-label">Timeframe:</span>
+                      <span>Results announced after ballot closes</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="gov-timeline-item">
+                  <div className="gov-timeline-marker">2</div>
+                  <div className="gov-timeline-content">
+                    <h3>Submit visa application</h3>
+                    <p>Complete and submit your full visa application with all required documents.</p>
+                    <div className="gov-timeline-detail">
+                      <span className="gov-timeline-label">Deadline:</span>
+                      <span className="gov-timeline-warning">Within 60 days of selection</span>
+                    </div>
+                    <div className="gov-timeline-costs">
+                      <div className="gov-timeline-cost">
+                        <span>Primary applicant</span>
+                        <span className="gov-cost-amount">$200 AUD</span>
+                      </div>
+                      <div className="gov-timeline-cost">
+                        <span>Each dependant</span>
+                        <span className="gov-cost-amount">$50 AUD</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="gov-timeline-item">
+                  <div className="gov-timeline-marker">3</div>
+                  <div className="gov-timeline-content">
+                    <h3>Complete health & character checks</h3>
+                    <p>All applicants must undergo medical examinations and character assessments.</p>
+                    <ul className="gov-requirements-list">
+                      <li>Health examination at approved clinic</li>
+                      <li>Police clearance certificates</li>
+                      <li>Biometrics (if required)</li>
+                    </ul>
+                    <div className="gov-timeline-costs">
+                      <div className="gov-timeline-cost">
+                        <span>Health exams (approx.)</span>
+                        <span className="gov-cost-amount">~$150 AUD</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="gov-timeline-item">
+                  <div className="gov-timeline-marker">4</div>
+                  <div className="gov-timeline-content">
+                    <h3>Receive visa decision</h3>
+                    <p>Once approved, you'll receive your permanent residency visa for Australia.</p>
+                    <div className="gov-timeline-detail">
+                      <span className="gov-timeline-label">Status:</span>
+                      <span>Permanent Resident</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="gov-timeline-item">
+                  <div className="gov-timeline-marker">5</div>
+                  <div className="gov-timeline-content">
+                    <h3>Relocate to Australia</h3>
+                    <p>Arrange and fund your own travel and initial settlement in Australia.</p>
+                    <ul className="gov-requirements-list">
+                      <li>Book flights from Tuvalu to Australia</li>
+                      <li>Arrange initial accommodation</li>
+                      <li>Prepare for living expenses until employment</li>
+                    </ul>
+                    <div className="gov-timeline-costs">
+                      <div className="gov-timeline-cost">
+                        <span>Flights (family of 3)</span>
+                        <span className="gov-cost-amount">$2,000 - $4,000 AUD</span>
+                      </div>
+                    </div>
+                    <div className="gov-warning-inline">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <span>No government relocation assistance is provided</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gov-total-cost-box">
+                <h4>Estimated total cost</h4>
+                <div className="gov-total-cost-breakdown">
+                  <div className="gov-cost-row">
+                    <span>Registration fee (already paid)</span>
+                    <span>$25</span>
+                  </div>
+                  <div className="gov-cost-row">
+                    <span>Visa fees (family of 3)</span>
+                    <span>$300</span>
+                  </div>
+                  <div className="gov-cost-row">
+                    <span>Health examinations</span>
+                    <span>~$150</span>
+                  </div>
+                  <div className="gov-cost-row">
+                    <span>Flights to Australia</span>
+                    <span>~$3,000</span>
+                  </div>
+                  <div className="gov-cost-row gov-cost-total">
+                    <span>Minimum total</span>
+                    <span>~$3,475+ AUD</span>
+                  </div>
+                </div>
+                <p className="gov-cost-note">
+                  Does not include initial accommodation, living expenses until employment, or costs from previous unsuccessful ballot attempts.
+                </p>
+              </div>
+
+              <button
+                className="gov-button gov-button-primary"
                 onClick={onComplete}
               >
-                Continue to learn more
+                Return to introduction
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
