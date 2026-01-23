@@ -2028,6 +2028,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  overflow-x: hidden;
 }
 
 .gov-form-container {
@@ -2040,6 +2041,8 @@ body {
   background: white;
   border: 1px solid #d0d0d0;
   padding: 35px 40px;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .gov-screen h2 {
@@ -2142,6 +2145,8 @@ body {
 /* Form Groups */
 .gov-form-group {
   margin-bottom: 24px;
+  min-width: 0;
+  width: 100%;
 }
 
 .gov-form-group label {
@@ -2161,6 +2166,26 @@ body {
   border-radius: 4px;
   background: white;
   transition: border-color 0.2s;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Date input specific fixes for mobile */
+.gov-form-group input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 48px;
+  line-height: 1.2;
+}
+
+.gov-form-group input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+.gov-form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .gov-form-group input:focus,
@@ -2778,6 +2803,18 @@ body {
 
   .gov-form-row {
     grid-template-columns: 1fr;
+  }
+
+  .gov-form-group input,
+  .gov-form-group select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 12px 10px;
+  }
+
+  .gov-form-group input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    min-height: 44px;
   }
 
   .gov-input-with-button {
